@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:background="@drawable/home_page_background2"
+    tools:context=".home_page">
+
+    <ImageButton
+        android:id="@+id/current_space_ship"
+        android:layout_width="264dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="144dp"
+        android:background="#00FFFFFF"
+        android:onClick="gotoupgrades"
+        android:scaleType="fitXY"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/space_ship1" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="348dp"
+        android:layout_height="86dp"
+        android:fontFamily="@font/aladin"
+        android:onClick="goplay"
+        android:shadowColor="#FFFFFF"
+        android:text="space war"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/current_space_ship"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="96dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/main_app_design"
+        android:fontFamily="@font/aladin"
+        android:onClick="play"
+        android:shadowColor="#FFFFFF"
+        android:text="play"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_space_ship" />
+
+    <Button
+        android:id="@+id/endless_mode_button"
+        android:layout_width="212dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/main_app_design"
+        android:fontFamily="@font/aladin"
+        android:onClick="losingscreen"
+        android:shadowColor="#FFFFFF"
+        android:text="endless  mode"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

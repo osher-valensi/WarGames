@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/win_background1"
+    tools:context=".win_screen">
+
+    <TextView
+        android:id="@+id/win_text"
+        android:layout_width="348dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/berkshire_swash"
+        android:shadowColor="#FFFFFF"
+        android:text="you won"
+        android:textAlignment="center"
+        android:textColor="#d8532b"
+        android:textSize="60sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/current_space_ship"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <TextView
+        android:id="@+id/earned_text"
+        android:layout_width="401dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="540dp"
+        android:fontFamily="@font/yatra_one"
+        android:shadowColor="#FFFFFF"
+        android:text="you earned: "
+        android:textAlignment="center"
+        android:textColor="#ffbb00"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/current_space_ship"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <TextView
+        android:id="@+id/amount_earned"
+        android:layout_width="196dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/yatra_one"
+        android:shadowColor="#FFFFFF"
+        android:text="555 "
+        android:textAlignment="center"
+        android:textColor="#ffbb00"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/home_butten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/earned_text" />
+
+    <TextView
+        android:id="@+id/c_text"
+        android:layout_width="57dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="616dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/yatra_one"
+        android:shadowColor="#FFFFFF"
+        android:text="c "
+        android:textAlignment="center"
+        android:textColor="#ffbb00"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/current_space_ship"
+        app:layout_constraintStart_toEndOf="@+id/amount_earned"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <Button
+        android:id="@+id/home_butten"
+        android:layout_width="104dp"
+        android:layout_height="55dp"
+
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/design2"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="gohome"
+        android:shadowColor="#FFFFFF"
+        android:text="H o m e"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

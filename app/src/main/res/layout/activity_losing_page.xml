@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/losing_background"
+    tools:context=".losing_page">
+
+    <Button
+        android:id="@+id/home_butten"
+        android:layout_width="104dp"
+        android:layout_height="55dp"
+
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/design3"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="home_page"
+        android:shadowColor="#FFFFFF"
+        android:text="H o m e"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/home_butten2"
+        android:layout_width="208dp"
+        android:layout_height="48dp"
+
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/design3"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="winpage"
+        android:shadowColor="#FFFFFF"
+        android:text="P l a y   a g a i n"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
