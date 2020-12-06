@@ -9,8 +9,11 @@ import android.view.SurfaceView;
 
 public class GameView extends SurfaceView implements Runnable {
     private Thread thread;
+     private  GameBackground gameBackground;
     private  Player player;
     private  Enemy enemy;
+    private  Shot shot;
+    private  Enemy enemy2;
 
     public GameView(Context context,int windowHeight, int windowWidth) {
         super(context);
@@ -24,6 +27,18 @@ public class GameView extends SurfaceView implements Runnable {
         playerBitmapEnemy=Bitmap.createScaledBitmap(playerBitmapEnemy,100,100,false);
         enemy=new Enemy(playerBitmapEnemy,500,500);
 
+        Bitmap playerBitmapEnemy2= BitmapFactory.decodeResource(getResources(),R.drawable.x);
+        playerBitmapEnemy2=Bitmap.createScaledBitmap(playerBitmapEnemy2,100,100,false);
+        enemy2=new Enemy(playerBitmapEnemy2,600,600);
+
+        Bitmap playerShot1= BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher_foreground);
+        playerShot1=Bitmap.createScaledBitmap(playerShot1,100,100,false);
+         shot = new Shot(playerShot1, 600, 600);
+
+        Bitmap gameBackgroundBitmap= BitmapFactory.decodeResource(getResources(),R.drawable.home_page_background1);
+//       gameBackgroundBitmap=Bitmap.createScaledBitmap(gameBackgroundBitmap,windowWidth,windowHeight,false);
+        gameBackground=new GameBackground(gameBackgroundBitmap,0,0);
+
 
 
         thread.start();
@@ -31,12 +46,13 @@ public class GameView extends SurfaceView implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        boolean gameOver = false;
+        while (!gameOver) {
 
             drawSurface();
             move();
             if (player.checkCollision(enemy)) {
-                boolean gameOver = true;
+                 gameOver = true;
             }
         }
 
@@ -47,9 +63,11 @@ public class GameView extends SurfaceView implements Runnable {
     private void drawSurface() {
         if(getHolder().getSurface().isValid()){
             Canvas canvas=getHolder().lockCanvas();
-
+gameBackground.draw(canvas);
             enemy.draw(canvas);
             player.draw(canvas);
+            enemy2.draw(canvas);
+            shot.draw(canvas);
             getHolder().unlockCanvasAndPost(canvas);
         }
 
@@ -57,6 +75,9 @@ public class GameView extends SurfaceView implements Runnable {
 
     private void move() {
         player.move();
+        enemy.move();
+        shot.move();
+        enemy2.move();
     }
 
     @Override

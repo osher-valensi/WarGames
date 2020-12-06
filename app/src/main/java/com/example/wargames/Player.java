@@ -6,20 +6,58 @@ import android.graphics.Color;
 public class Player extends Sprite {
     private  float targetX;
     private  float targetY;
+    private  double moveX;
+    private  double moveY;
     public Player(Bitmap bitmap, int x, int y) {
         super(bitmap, x, y);
         targetX=x;
         targetY=y;
+        moveX=0;
+        moveY=0;
     }
-    public  void  move(){
-        if(x<targetX )
-            x+=20;
-        if(x>targetX)
-            x-=20;
-        if(y<targetY )
-            y+=20;
-        if(y>targetY)
-            y-=20;
+    public  void  move() {
+        moveX = (Math.max(x, targetX) - Math.min(x, targetX));
+        moveY = (Math.max(y, targetY) - Math.min(y, targetY));
+
+
+        if (x < targetX) {
+            if (moveY > moveX)
+                if (Math.max(y, targetY) == y)
+                    y -= 20;
+                else
+                    y += 20;
+
+            x += 20;
+        }
+
+        if (x > targetX) {
+            if (moveY > moveX)
+                if (Math.max(y, targetY) == y)
+                    y -= 20;
+                else
+                    y += 20;
+
+            x -= 20;
+        }
+        if (y < targetY) {
+            if (moveX > moveY)
+                if (Math.max(x, targetX) == x)
+                    x -= 20;
+                else
+                    x += 20;
+
+            y += 20;
+        }
+
+        if (y > targetY) {
+            if (moveX > moveY)
+                if (Math.max(x, targetX) == x)
+                    x -= 20;
+                else
+                    x += 20;
+
+            y -= 20;
+        }
     }
     public  void moveTo(float x, float y) {
         targetY=y;
