@@ -1,7 +1,6 @@
 package com.example.wargames;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
 
 public class Player extends Sprite {
     private  float targetX;
@@ -23,62 +22,47 @@ public class Player extends Sprite {
         if (x < targetX) {
             if (moveY > moveX)
                 if (Math.max(y, targetY) == y)
-                    y -= 20;
+                    y -= 10;
                 else
-                    y += 20;
+                    y += 10;
 
-            x += 20;
+            x += 10;
         }
 
         if (x > targetX) {
             if (moveY > moveX)
                 if (Math.max(y, targetY) == y)
-                    y -= 20;
+                    y -= 10;
                 else
-                    y += 20;
+                    y += 10;
 
-            x -= 20;
+            x -= 10;
         }
         if (y < targetY) {
             if (moveX > moveY)
                 if (Math.max(x, targetX) == x)
-                    x -= 20;
+                    x -= 10;
                 else
-                    x += 20;
+                    x += 10;
 
-            y += 20;
+            y += 10;
         }
 
         if (y > targetY) {
             if (moveX > moveY)
                 if (Math.max(x, targetX) == x)
-                    x -= 20;
+                    x -= 10;
                 else
-                    x += 20;
+                    x += 10;
 
-            y -= 20;
+            y -= 10;
         }
     }
     public  void moveTo(float x, float y) {
         targetY=y;
         targetX=x;
     }
-    public boolean checkCollision(Sprite other) {
-        int left = Math.max(x, other.x);
 
-        int right = Math.min(x+bitmap.getWidth(), other.x+other.bitmap.getWidth());
-        int top = Math.max(y, other.y);
-        int bottom = Math.min(y+bitmap.getHeight(), other.y+other.bitmap.getHeight());
-        for (int row  = left; row < right; row++) {
-            for (int col = top; col < bottom; col++) {
-                if (bitmap.getPixel(row-x, col-y)!= Color.TRANSPARENT &&
-                        other.bitmap.getPixel(row-other.x, col-other.y)!= Color.TRANSPARENT) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
 
 }

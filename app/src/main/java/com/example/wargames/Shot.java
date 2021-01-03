@@ -7,11 +7,16 @@ public class Shot extends Sprite {
         super(bitmap, x, y);
     }
 
-    public  void  move(){
+    public void move() {
 
-           y-=10;
-           if(y<=0)
-               y=2000;
+        y -= 17;
+
 
     }
+
+    public void restart(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
 }
