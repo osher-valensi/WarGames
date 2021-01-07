@@ -9,7 +9,7 @@ public class Enemy extends Sprite {
         super(bitmap, x, y);
     }
  private  int change = 0;
-    private  int moveSpeed = 17;
+    private  int moveSpeed = 14;
     public  void  move(){
 
 

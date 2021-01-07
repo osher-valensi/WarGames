@@ -9,7 +9,7 @@ public class Shot extends Sprite {
 
     public void move() {
 
-        y -= 17;
+        y -= 28;
 
 
     }
